@@ -9,7 +9,6 @@
 
     <title>LINGAME</title>
 
-
     <style>
 
         /* =========================
@@ -23,16 +22,15 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
             background: #0b0d12;
             color: #eeeeee;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
 
@@ -42,14 +40,13 @@
 
         nav {
             min-height: 78px;
-
             background: #0a0a0a;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 10px 8%;
+            padding: 10px 5%;
 
             border-bottom: 1px solid #252a35;
 
@@ -58,9 +55,6 @@
             z-index: 1000;
         }
 
-
-        /* LOGO DE LA BARRA */
-
         .logo {
             width: 190px;
             height: 60px;
@@ -68,7 +62,6 @@
             display: flex;
             align-items: center;
         }
-
 
         .logo img {
             max-width: 100%;
@@ -81,27 +74,23 @@
         }
 
 
-        /* MENÚ */
+        /* =========================
+           MENÚ
+        ========================== */
 
         nav ul {
             display: flex;
-
             list-style: none;
-
             gap: 32px;
         }
 
-
         nav a {
             color: #d8dbe2;
-
             text-decoration: none;
-
             font-size: 15px;
 
             transition: color 0.25s ease;
         }
-
 
         nav a:hover {
             color: #4a84ee;
@@ -113,13 +102,10 @@
         ========================== */
 
         .hero {
-
             min-height: 560px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             text-align: center;
@@ -134,18 +120,15 @@
                 );
         }
 
-
         .hero-content {
-            max-width: 850px;
+            max-width: 1000px;
+            width: 100%;
         }
 
-
         .hero h1 {
-
             font-size: clamp(55px, 9vw, 90px);
 
             font-weight: 800;
-
             letter-spacing: 4px;
 
             color: #ffffff;
@@ -153,11 +136,8 @@
             margin-bottom: 15px;
         }
 
-
         .hero h2 {
-
             font-size: 27px;
-
             font-weight: 400;
 
             color: #1080e9;
@@ -165,17 +145,14 @@
             margin-bottom: 22px;
         }
 
-
         .hero p {
-
-            max-width: 700px;
+            max-width: 750px;
 
             margin: auto;
 
             color: #aeb4c0;
 
             font-size: 17px;
-
             line-height: 1.8;
         }
 
@@ -185,7 +162,6 @@
         ========================== */
 
         .btn {
-
             display: inline-block;
 
             margin-top: 32px;
@@ -211,11 +187,8 @@
                 transform 0.25s ease;
         }
 
-
         .btn:hover {
-
-            background: #1080e9;
-
+            background: #0d6fc9;
             transform: translateY(-2px);
         }
 
@@ -225,21 +198,15 @@
         ========================== */
 
         section {
-
-            padding: 90px 10%;
+            padding: 90px 5%;
         }
 
-
         .titulo {
-
             text-align: center;
-
             margin-bottom: 55px;
         }
 
-
         .titulo h2 {
-
             font-size: 36px;
 
             font-weight: 700;
@@ -249,11 +216,8 @@
             margin-bottom: 8px;
         }
 
-
         .titulo p {
-
             color: #777f8d;
-
             font-size: 15px;
         }
 
@@ -263,17 +227,13 @@
         ========================== */
 
         .articulo {
+            width: 100%;
+            max-width: 1200px;
 
-            max-width: 950px;
-
-            margin: auto;
-
-            margin-bottom: 60px;
+            margin: 0 auto 60px auto;
         }
 
-
         .articulo h3 {
-
             color: #1080e9;
 
             font-size: 25px;
@@ -281,18 +241,14 @@
             font-weight: 600;
 
             margin-bottom: 17px;
-
             margin-top: 35px;
         }
-
 
         .articulo h3:first-child {
             margin-top: 0;
         }
 
-
         .articulo p {
-
             color: #aeb4bd;
 
             font-size: 16px;
@@ -308,14 +264,12 @@
         ========================== */
 
         .imagen-contenido {
-
             width: 100%;
+            max-width: 1100px;
 
-            max-width: 900px;
+            height: auto;
 
-            height: 360px;
-
-            object-fit: cover;
+            object-fit: contain;
 
             display: block;
 
@@ -333,11 +287,8 @@
                 border-color 0.3s ease;
         }
 
-
         .imagen-contenido:hover {
-
             transform: translateY(-4px);
-
             border-color: #1080e9;
         }
 
@@ -347,14 +298,14 @@
         ========================== */
 
         .video-contenido {
-
             width: 100%;
+            max-width: 1100px;
 
-            max-width: 900px;
+            aspect-ratio: 16 / 9;
 
-            height: 500px;
+            height: auto;
 
-            object-fit: cover;
+            object-fit: contain;
 
             display: block;
 
@@ -376,11 +327,9 @@
         ========================== */
 
         .oscuro {
-
             background: #0f1218;
 
             border-top: 1px solid #1d222b;
-
             border-bottom: 1px solid #1d222b;
         }
 
@@ -390,7 +339,6 @@
         ========================== */
 
         #caracteristicas .articulo {
-
             background: #131720;
 
             border: 1px solid #252b36;
@@ -400,17 +348,12 @@
             padding: 40px;
         }
 
-
         #caracteristicas .articulo h3 {
-
             margin-top: 10px;
-
             color: #1080e9;
         }
 
-
         #caracteristicas .articulo p {
-
             margin-bottom: 35px;
         }
 
@@ -420,15 +363,11 @@
         ========================== */
 
         .download {
-
             text-align: center;
-
             background: #0b0d12;
         }
 
-
         .download h2 {
-
             color: #ffffff;
 
             font-size: 38px;
@@ -436,9 +375,7 @@
             margin-bottom: 15px;
         }
 
-
         .download p {
-
             color: #9da4af;
 
             max-width: 650px;
@@ -454,7 +391,6 @@
         ========================== */
 
         footer {
-
             background: #080a0e;
 
             text-align: center;
@@ -468,26 +404,65 @@
             font-size: 14px;
         }
 
-
         footer p + p {
             margin-top: 5px;
         }
 
-
         footer strong {
-
             color: #2055e9;
         }
 
 
         /* =========================
-           RESPONSIVE
+           COMPUTADORA / PANTALLAS GRANDES
+        ========================== */
+
+        @media (min-width: 1200px) {
+
+            .articulo {
+                max-width: 1250px;
+            }
+
+            .imagen-contenido,
+            .video-contenido {
+                max-width: 1150px;
+            }
+
+        }
+
+
+        /* =========================
+           TABLETS
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 10px 4%;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .articulo {
+                max-width: 100%;
+            }
+
+        }
+
+
+        /* =========================
+           CELULARES
         ========================== */
 
         @media (max-width: 700px) {
 
             nav {
-
                 flex-direction: column;
 
                 gap: 10px;
@@ -495,17 +470,12 @@
                 padding: 12px 20px;
             }
 
-
             .logo {
-
                 justify-content: center;
-
                 width: 170px;
             }
 
-
             nav ul {
-
                 gap: 15px;
 
                 flex-wrap: wrap;
@@ -513,89 +483,72 @@
                 justify-content: center;
             }
 
-
             nav a {
-
                 font-size: 13px;
             }
 
 
             .hero {
-
                 min-height: 500px;
-
                 padding: 70px 20px;
             }
 
-
             .hero h1 {
-
                 font-size: 52px;
-
                 letter-spacing: 2px;
             }
 
-
             .hero h2 {
-
                 font-size: 21px;
             }
 
-
             .hero p {
-
                 font-size: 15px;
             }
 
 
             section {
-
                 padding: 65px 6%;
             }
 
-
             .titulo h2 {
-
                 font-size: 30px;
             }
 
-
             .articulo h3 {
-
                 font-size: 23px;
             }
 
-
             .articulo p {
-
                 font-size: 15px;
             }
 
 
             .imagen-contenido {
-
-                height: 230px;
-
+                width: 100%;
+                height: auto;
                 margin: 30px auto;
             }
 
 
-            .video-contenido {
+            /* VIDEO HORIZONTAL EN CELULAR */
 
-                height: 230px;
+            .video-contenido {
+                width: 100%;
+                max-width: 100%;
+                aspect-ratio: 16 / 9;
+                height: auto;
 
                 margin: 30px auto;
             }
 
 
             #caracteristicas .articulo {
-
                 padding: 25px;
             }
 
 
             .download h2 {
-
                 font-size: 30px;
             }
 
@@ -633,20 +586,17 @@
                 </a>
             </li>
 
-
             <li>
                 <a href="#sobre">
                     Sobre LINGAME
                 </a>
             </li>
 
-
             <li>
                 <a href="#caracteristicas">
                     Características
                 </a>
             </li>
-
 
             <li>
                 <a href="#descarga">
@@ -671,11 +621,9 @@
                 LINGAME
             </h1>
 
-
             <h2>
                 Tu sistema. Tu juego. Tu libertad.
             </h2>
-
 
             <p>
 
@@ -686,11 +634,8 @@
 
             </p>
 
-
             <a href="#sobre" class="btn">
-
                 CONOCER LINGAME
-
             </a>
 
         </div>
@@ -730,12 +675,11 @@
                 tener varias herramienta para poder jugar su juegos favoritos
                 con una amplia seleccion los que significa que no se centra unicamente
                 en un unica emulacion de consola
+
             </p>
 
 
-            <!-- =========================
-                 PRIMER ESPACIO: LOGO
-            ========================== -->
+            <!-- LOGO -->
 
             <img
                 src="logo1920.jpg.jpeg"
@@ -748,16 +692,15 @@
 
                 Este proyecto nace con la idea de mezclar linux con el sistema de emulacion
                 ya que asi el usuario tiene total libertad y manipulacion de las configuracion
-                no solo del las app asignadas si no tambien del sistema de su equipo 
+                no solo del las app asignadas si no tambien del sistema de su equipo
                 para que lo puedo modificar a su antojo. Ademas que puedo tener la facilidad de usarlo
                 sin contar las apps que traen la distribución para que pueda tener una variedad
                 de ellas por si alguna no funciona o es complicada de usar
+
             </p>
 
 
-            <!-- =========================
-                 SEGUNDO ESPACIO: IMAGEN 1
-            ========================== -->
+            <!-- IMAGEN 1 -->
 
             <img
                 src="imagen1.jpeg"
@@ -769,20 +712,19 @@
             <p>
 
                 LINGAME buscamos que sea el mejor entorno para jugar junto que sea amigable
-                con lo usuario a la hora de usarlo asi cualquier persona que nunca haya usado 
+                con lo usuario a la hora de usarlo asi cualquier persona que nunca haya usado
                 el sistema operativo pueda manejarlo sin tener que recurrir a tantas ayudas
 
             </p>
 
 
-            <!-- =========================
-                 TERCER ESPACIO: VIDEO
-            ========================== -->
+            <!-- VIDEO -->
 
             <video
                 class="video-contenido"
                 controls
                 preload="metadata"
+                playsinline
             >
 
                 <source
@@ -801,7 +743,7 @@
                 en los juegos o quiera jugar videojuegos antiguos ya que window aunque a mayoria
                 este creado para el gasta mas recurso y no permite un control total del su sistema
                 comparado con nuestro LINGAME puede ver que procesos puede quitar sin problema
-                si esto estan usando demasiado recurso sin importar que
+                si esto estan usando demasiado recurso sin importar si estan en modo kernel.
 
             </p>
 
@@ -835,7 +777,7 @@
         <div class="articulo">
 
             <h3>
-                🎮 experiencia mejorada
+                🎮 Experiencia mejorada
             </h3>
 
 
@@ -907,11 +849,14 @@
         </p>
 
 
-        <a href="https://drive.google.com/file/d/1mho_osbZQlXR03DwRxqhVpkVmNlEnk4S/view"class="btn"target="_blank"rel="noopener noreferrer">
-          DESCARGAR ISO
-         </a>
-
-
+        <a
+            href="https://drive.google.com/file/d/1mho_osbZQlXR03DwRxqhVpkVmNlEnk4S/view"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            DESCARGAR ISO
+        </a>
 
     </section>
 
@@ -943,3 +888,4 @@
 </body>
 
 </html>
+
