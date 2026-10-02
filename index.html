@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LINGAME</title>
+
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #0b0d12;
+            color: #eeeeee;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            min-height: 78px;
+
+            background: #0a0a0a;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 8%;
+
+            border-bottom: 1px solid #252a35;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        /* LOGO DE LA BARRA */
+
+        .logo {
+            width: 190px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .logo img {
+            max-width: 100%;
+            max-height: 55px;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+        }
+
+
+        /* MENÚ */
+
+        nav ul {
+            display: flex;
+
+            list-style: none;
+
+            gap: 32px;
+        }
+
+
+        nav a {
+            color: #d8dbe2;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            transition: color 0.25s ease;
+        }
+
+
+        nav a:hover {
+            color: #4a84ee;
+        }
+
+
+        /* =========================
+           PORTADA
+        ========================== */
+
+        .hero {
+
+            min-height: 560px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #111521 0%,
+                    #0b0d12 100%
+                );
+        }
+
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(55px, 9vw, 90px);
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            color: #ffffff;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero h2 {
+
+            font-size: 27px;
+
+            font-weight: 400;
+
+            color: #1080e9;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #aeb4c0;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           BOTÓN
+        ========================== */
+
+        .btn {
+
+            display: inline-block;
+
+            margin-top: 32px;
+
+            padding: 13px 28px;
+
+            background: #1080e9;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            letter-spacing: 0.5px;
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .btn:hover {
+
+            background: #1080e9;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SECCIONES
+        ========================== */
+
+        section {
+
+            padding: 90px 10%;
+        }
+
+
+        .titulo {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .titulo h2 {
+
+            font-size: 36px;
+
+            font-weight: 700;
+
+            color: #ffffff;
+
+            margin-bottom: 8px;
+        }
+
+
+        .titulo p {
+
+            color: #777f8d;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           ARTÍCULOS
+        ========================== */
+
+        .articulo {
+
+            max-width: 950px;
+
+            margin: auto;
+
+            margin-bottom: 60px;
+        }
+
+
+        .articulo h3 {
+
+            color: #a78bfa;
+
+            font-size: 25px;
+
+            font-weight: 600;
+
+            margin-bottom: 17px;
+
+            margin-top: 35px;
+        }
+
+
+        .articulo h3:first-child {
+            margin-top: 0;
+        }
+
+
+        .articulo p {
+
+            color: #aeb4bd;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           IMÁGENES
+        ========================== */
+
+        .imagen-contenido {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            height: 360px;
+
+            object-fit: cover;
+
+            display: block;
+
+            margin: 40px auto;
+
+            border-radius: 10px;
+
+            border: 1px solid #282d38;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.35);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .imagen-contenido:hover {
+
+            transform: translateY(-4px);
+
+            border-color: #1080e9;
+        }
+
+
+        /* =========================
+           VIDEO
+        ========================== */
+
+        .video-contenido {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            height: 500px;
+
+            object-fit: cover;
+
+            display: block;
+
+            margin: 40px auto;
+
+            border-radius: 10px;
+
+            border: 1px solid #282d38;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.35);
+
+            background: #000;
+        }
+
+
+        /* =========================
+           SECCIÓN OSCURA
+        ========================== */
+
+        .oscuro {
+
+            background: #0f1218;
+
+            border-top: 1px solid #1d222b;
+
+            border-bottom: 1px solid #1d222b;
+        }
+
+
+        /* =========================
+           CARACTERÍSTICAS
+        ========================== */
+
+        #caracteristicas .articulo {
+
+            background: #131720;
+
+            border: 1px solid #252b36;
+
+            border-radius: 10px;
+
+            padding: 40px;
+        }
+
+
+        #caracteristicas .articulo h3 {
+
+            margin-top: 10px;
+
+            color: #9b7cff;
+        }
+
+
+        #caracteristicas .articulo p {
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           DESCARGA
+        ========================== */
+
+        .download {
+
+            text-align: center;
+
+            background: #0b0d12;
+        }
+
+
+        .download h2 {
+
+            color: #ffffff;
+
+            font-size: 38px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .download p {
+
+            color: #9da4af;
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            background: #080a0e;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            border-top: 1px solid #20242d;
+
+            color: #686f7a;
+
+            font-size: 14px;
+        }
+
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+
+        footer strong {
+
+            color: #9b7cff;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+                padding: 12px 20px;
+            }
+
+
+            .logo {
+
+                justify-content: center;
+
+                width: 170px;
+            }
+
+
+            nav ul {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            nav a {
+
+                font-size: 13px;
+            }
+
+
+            .hero {
+
+                min-height: 500px;
+
+                padding: 70px 20px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 52px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .hero h2 {
+
+                font-size: 21px;
+            }
+
+
+            .hero p {
+
+                font-size: 15px;
+            }
+
+
+            section {
+
+                padding: 65px 6%;
+            }
+
+
+            .titulo h2 {
+
+                font-size: 30px;
+            }
+
+
+            .articulo h3 {
+
+                font-size: 23px;
+            }
+
+
+            .articulo p {
+
+                font-size: 15px;
+            }
+
+
+            .imagen-contenido {
+
+                height: 230px;
+
+                margin: 30px auto;
+            }
+
+
+            .video-contenido {
+
+                height: 230px;
+
+                margin: 30px auto;
+            }
+
+
+            #caracteristicas .articulo {
+
+                padding: 25px;
+            }
+
+
+            .download h2 {
+
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+
+            <img
+                src="logo1920.jpg.jpeg"
+                alt="Logo de LINGAME"
+            >
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="#inicio">
+                    Inicio
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#sobre">
+                    Sobre LINGAME
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#caracteristicas">
+                    Características
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#descarga">
+                    Descargar
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>
+                LINGAME
+            </h1>
+
+
+            <h2>
+                Tu sistema. Tu juego. Tu libertad.
+            </h2>
+
+
+            <p>
+
+                LINGAME es una distribución Linux
+                pensada para quienes buscan una
+                experiencia sencilla, moderna y
+                enfocada en el mundo gaming.
+
+            </p>
+
+
+            <a href="#sobre" class="btn">
+
+                CONOCER LINGAME
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE LINGAME
+    ========================== -->
+
+    <section id="sobre">
+
+        <div class="titulo">
+
+            <h2>
+                🐧 SOBRE LINGAME
+            </h2>
+
+            <p>
+                Conoce nuestro proyecto
+            </p>
+
+        </div>
+
+
+        <div class="articulo">
+
+            <h3>
+                ¿Qué es LINGAME?
+            </h3>
+
+
+            <p>
+
+                Es una distribución que permite a los usuarios
+                tener varias herramienta para poder jugar su juegos favoritos
+                con una amplia seleccion los que significa que no se centra unicamente
+                en un unica emulacion de consola
+            </p>
+
+
+            <!-- =========================
+                 PRIMER ESPACIO: LOGO
+            ========================== -->
+
+            <img
+                src="logo1920.jpg.jpeg"
+                alt="Logo de LINGAME"
+                class="imagen-contenido"
+            >
+
+
+            <p>
+
+                Este proyecto nace con la idea de mezclar linux con el sistema de emulacion
+                ya que asi el usuario tiene total libertad y manipulacion de las configuracion
+                no solo del las app asignadas si no tambien del sistema de su equipo 
+                para que lo puedo modificar a su antojo. Ademas que puedo tener la facilidad de usarlo
+                sin contar las apps que traen la distribución para que pueda tener una variedad
+                de ellas por si alguna no funciona o es complicada de usar
+            </p>
+
+
+            <!-- =========================
+                 SEGUNDO ESPACIO: IMAGEN 1
+            ========================== -->
+
+            <img
+                src="imagen1.jpeg"
+                alt="Imagen de LINGAME"
+                class="imagen-contenido"
+            >
+
+
+            <p>
+
+                LINGAME buscamos que sea el mejor entorno para jugar junto que sea amigable
+                con lo usuario a la hora de usarlo asi cualquier persona que nunca haya usado 
+                el sistema operativo pueda manejarlo sin tener que recurrir a tantas ayudas
+
+            </p>
+
+
+            <!-- =========================
+                 TERCER ESPACIO: VIDEO
+            ========================== -->
+
+            <video
+                class="video-contenido"
+                controls
+                preload="metadata"
+            >
+
+                <source
+                    src="video.mp4"
+                    type="video/mp4"
+                >
+
+                Tu navegador no soporta la reproducción de videos.
+
+            </video>
+
+
+            <p>
+
+                Nuestro objetivo es darle a las personas una mejor sistema para aprovechar su recursos
+                en los juegos o quiera jugar videojuegos antiguos ya que window aunque a mayoria
+                este creado para el gasta mas recurso y no permite un control total del su sistema
+                comparado con nuestro LINGAME puede ver que procesos puede quitar sin problema
+                si esto estan usando demasiado recurso sin importar que
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CARACTERÍSTICAS
+    ========================== -->
+
+    <section
+        class="oscuro"
+        id="caracteristicas"
+    >
+
+        <div class="titulo">
+
+            <h2>
+                ⚡ CARACTERÍSTICAS
+            </h2>
+
+            <p>
+                Lo que hace especial a LINGAME
+            </p>
+
+        </div>
+
+
+        <div class="articulo">
+
+            <h3>
+                🎮 experiencia mejorada
+            </h3>
+
+
+            <p>
+
+                LINGAME está pensado para ofrecer
+                un entorno cómodo para jugar,
+                configurar tus aplicaciones y
+                aprovechar tu ordenador para
+                entretenimiento.
+
+            </p>
+
+
+            <h3>
+                🐧 Basado en Linux
+            </h3>
+
+
+            <p>
+
+                Al estar basado en Linux, el
+                proyecto aprovecha las ventajas
+                de un sistema abierto, flexible y
+                altamente personalizable.
+
+            </p>
+
+
+            <h3>
+                🚀 Rendimiento
+            </h3>
+
+
+            <p>
+
+                El diseño busca mantener una
+                experiencia fluida y evitar
+                elementos innecesarios que puedan
+                afectar el uso diario del sistema.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DESCARGA
+    ========================== -->
+
+    <section
+        class="download"
+        id="descarga"
+    >
+
+        <h2>
+            🚀 DESCARGA LINGAME
+        </h2>
+
+
+        <p>
+
+            Próximamente podrás descargar la
+            imagen ISO de LINGAME e instalarla
+            en tu equipo.
+
+        </p>
+
+
+        <a href="#" class="btn">
+
+            DESCARGAR ISO
+
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026
+            <strong>LINGAME</strong>
+
+        </p>
+
+
+        <p>
+
+            Una distribución Linux
+            creada para gamers.
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
